@@ -17,7 +17,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 350px;
     text-align: center;
 }
 
@@ -42,18 +42,41 @@ input[type="date"] {
 button {
     background-color: #4CAF50;
     color: white;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin: 5px;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-#result {
-    margin-top: 20px;
-    font-size: 1em;
+#calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.day {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.wonder-week {
+    background-color: #ffd700;
     color: #333;
+    font-weight: bold;
 }
