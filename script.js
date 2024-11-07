@@ -1,59 +1,32 @@
-* {
-    box-sizing: border-box;
-}
+function calculateWonderWeeks() {
+    const birthdateInput = document.getElementById("birthdate").value;
+    if (!birthdateInput) {
+        alert("Please enter a birthdate.");
+        return;
+    }
 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f3f4f6;
-}
+    const birthdate = new Date(birthdateInput);
+    const today = new Date();
+    const ageInDays = Math.floor((today - birthdate) / (1000 * 60 * 60 * 24));
+    const ageInWeeks = Math.floor(ageInDays / 7);
+    const wonderWeeks = [5, 8, 12, 19, 26, 37, 46, 55, 64, 75]; // 주요 원더윅스 주차
 
-.container {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    text-align: center;
-}
+    let resultText = `<p>Baby's age: ${ageInWeeks} weeks</p>`;
+    let upcomingWonderWeek = null;
 
-h1 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
+    for (let week of wonderWeeks) {
+        if (ageInWeeks < week) {
+            upcomingWonderWeek = week;
+            break;
+        }
+    }
 
-label {
-    display: block;
-    margin: 10px 0 5px;
-}
+    if (upcomingWonderWeek) {
+        const daysUntilWonderWeek = (upcomingWonderWeek * 7) - ageInDays;
+        resultText += `<p>Next Wonder Week: ${upcomingWonderWeek} weeks (in ${daysUntilWonderWeek} days)</p>`;
+    } else {
+        resultText += "<p>No upcoming Wonder Weeks in the first year.</p>";
+    }
 
-input[type="date"] {
-    padding: 8px;
-    width: 100%;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-#result {
-    margin-top: 20px;
-    font-size: 1em;
-    color: #333;
+    document.getElementById("result").innerHTML = resultText;
 }
