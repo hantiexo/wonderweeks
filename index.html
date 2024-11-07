@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wonder Weeks Calculator</title>
+    <title>Wonder Weeks Calendar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Wonder Weeks Calculator</h1>
-        <p>Enter your baby's birthdate to calculate their Wonder Weeks.</p>
+        <h1>Wonder Weeks Calendar</h1>
+        <p>Enter your baby's birthdate to view the Wonder Weeks calendar.</p>
 
         <label for="birthdate">Baby's Birthdate:</label>
         <input type="date" id="birthdate" required>
-        <button onclick="calculateWonderWeeks()">Calculate Wonder Weeks</button>
+        <button onclick="initializeCalendar()">Show Calendar</button>
 
-        <div id="result"></div>
+        <div id="calendar-controls">
+            <button onclick="previousMonth()">Previous Month</button>
+            <span id="calendar-title"></span>
+            <button onclick="nextMonth()">Next Month</button>
+        </div>
+
+        <div id="calendar"></div>
     </div>
 
     <script src="script.js"></script>
