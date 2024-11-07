@@ -3,83 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wonder Weeks - Baby Development Guide</title>
+    <title>Wonder Weeks Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">Wonder Weeks</h1>
-            <nav class="nav">
-                <a href="#about">About</a>
-                <a href="#stages">Stages</a>
-                <a href="#tips">Tips</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <h1>Wonder Weeks Calculator</h1>
+        <p>Enter your baby's birthdate to calculate their Wonder Weeks.</p>
 
-    <section id="hero">
-        <div class="container">
-            <h2>Track Your Baby’s Development</h2>
-            <p>Discover key developmental stages and tips to help your baby grow.</p>
-            <button class="cta-button" onclick="startTracking()">Get Started</button>
-        </div>
-    </section>
+        <label for="birthdate">Baby's Birthdate:</label>
+        <input type="date" id="birthdate" required>
+        <button onclick="calculateWonderWeeks()">Calculate Wonder Weeks</button>
 
-    <section id="about" class="content-section">
-        <div class="container">
-            <h3>About Wonder Weeks</h3>
-            <p>The Wonder Weeks offers insights into the developmental stages of babies, helping parents understand and support their growth.</p>
-        </div>
-    </section>
-
-    <section id="stages" class="content-section">
-        <div class="container">
-            <h3>Developmental Stages</h3>
-            <div class="stage-card">
-                <h4>Stage 1</h4>
-                <p>Description of the developmental stage. Tips and insights on how to support the baby.</p>
-            </div>
-            <div class="stage-card">
-                <h4>Stage 2</h4>
-                <p>Description of the developmental stage. Tips and insights on how to support the baby.</p>
-            </div>
-            <!-- More stages can be added here -->
-        </div>
-    </section>
-
-    <section id="tips" class="content-section">
-        <div class="container">
-            <h3>Parenting Tips</h3>
-            <p>Helpful tips for parents to navigate the early stages of child development.</p>
-            <!-- Add more content here -->
-        </div>
-    </section>
-
-    <section id="contact" class="content-section">
-        <div class="container">
-            <h3>Contact Us</h3>
-            <form id="contactForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" required></textarea>
-
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Wonder Weeks. All Rights Reserved.</p>
-        </div>
-    </footer>
+        <div id="result"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
